@@ -55,7 +55,8 @@ gem 'bootstrap4-kaminari-views'
 gem 'ransack'
 gem 'config', '2.0.0'
 gem 'enum_help'
-
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

@@ -9,4 +9,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :email, presence: true
   has_many :boards, dependent: :destroy
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[created_at email id name role updated_at]
+  end
 end
