@@ -1,0 +1,21 @@
+<footer id='footer' class='footer-bottom'>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark py-5">
+  <a class="navbar-brand" href="#">USJ公式サイトへ</a>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'パーク', main_index_path , class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+      <%= link_to '周り方', boards_path(tag_name: 'cicket'), class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link disabled" href="#">イベント</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link disabled" href="#">Q&A</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</footer>

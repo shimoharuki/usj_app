@@ -53,10 +53,12 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'ransack'
-gem 'config', '2.0.0'
+gem 'config', '2.2.1'
 gem 'enum_help'
-gem 'redcarpet', '~> 2.3.0'
+gem 'redcarpet'
 gem 'coderay'
+gem 'acts-as-taggable-on', '~> 9.0'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -71,6 +73,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem 'letter_opener_web', '~> 2.0'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

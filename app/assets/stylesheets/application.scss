@@ -19,3 +19,16 @@
 body{
     font-family: 'Shippori Mincho', serif;
 }
+
+.container img {
+    max-width: 100%;
+}
+
+.custom-height {
+    height: 700px; /* 好きな高さに調整してください */
+  }
+
+footer {
+    position: static;
+  }
+  
