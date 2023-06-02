@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container", style="height:80vh;">
   <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1><%= t '.title' %></h1>
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 py-5 my-5">
+      <h1>メールアドレスを入力してください</h1>
       <%= form_with url: password_resets_path, local: true do |f| %>
         <div class="form-group">
           <%= f.label :email, User.human_attribute_name(:email) %><br />
           <%= f.email_field :email, class: 'form-control' %>
         </div>
-        <%= f.submit '更新',class: 'btn btn-primary' %>
+        <%= f.submit '送信',class: 'btn btn-secondary' %>
       <% end %>
     </div>
   </div>
