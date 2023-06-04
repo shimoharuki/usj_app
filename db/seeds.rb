@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 50.times do |i|
-    Board.create!(
-      title: "ボード#{i + 1}",
-      body: "ボード#{i + 1}の内容",
-      user_id: 1  # ユーザーIDを適切な値に変更する
-    )
-  end
+  Board.create!(
+    title: "ボード#{i + 1}",
+    body: "ボード#{i + 1}の内容",
+    user_id: 1  # ユーザーIDを適切な値に変更する
+  )
+end

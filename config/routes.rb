@@ -20,9 +20,16 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create]
   resources :main, only: %i[index]
-  resources :boards
+  resources :boards do
+    collection do
+      get 'likes'
+    end
+  end
+  resources :likes, only: %i[create destroy]
+  resource :profile, only: %i[show edit update]
+
   resources :password_resets, only: %i[new create edit update]
-  
+
   namespace :admin do
     root to: 'dashboards#index'
     get 'login', to: 'user_sessions#new'

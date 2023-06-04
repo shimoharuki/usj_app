@@ -10,8 +10,22 @@ class User < ApplicationRecord
   validates :email, presence: true
   has_many :boards, dependent: :destroy
   validates :reset_password_token, presence: true, uniqueness: true, allow_nil: true
+  has_many :likes, dependent: :destroy
+  has_many :like_boards, through: :likes, source: :board
 
-  def self.ransackable_attributes(auth_object = nil)
+  def self.ransackable_attributes(_auth_object = nil)
     %w[created_at email id name role updated_at]
+  end
+
+  def like(board)
+    like_boards << board
+  end
+
+  def unlike(board)
+    like_boards.destroy(board)
+  end
+
+  def like?(board)
+    like_boards.include?(board)
   end
 end
