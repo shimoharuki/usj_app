@@ -9,6 +9,7 @@
             </div>
           </div>
           <%= markdown(@board.body) %>
+          <%= render 'like_button', board: @board %>
         </div>
       </article>
     </div>

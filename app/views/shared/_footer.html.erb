@@ -1,6 +1,6 @@
 <footer id='footer' class='footer-bottom'>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark py-5">
-  <a class="navbar-brand" href="#">USJ公式サイトへ</a>
+  <%= link_to 'USJ公式サイトへ', 'https://www.usj.co.jp/', target: '_blank' , class: "nav-link" %>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -10,10 +10,10 @@
       <%= link_to '周り方', boards_path(tag_name: 'cicket'), class: "nav-link" %>
       </li>
       <li class="nav-item active">
-        <a class="nav-link disabled" href="#">イベント</a>
+        <%= link_to 'イベント', boards_path(tag_name: 'event'), class: "nav-link" %>
       </li>
       <li class="nav-item active">
-        <a class="nav-link disabled" href="#">Q&A</a>
+        <%= link_to 'Q&A', boards_path(tag_name: 'question'), class: "nav-link" %>
       </li>
     </ul>
   </div>

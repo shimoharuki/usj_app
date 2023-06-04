@@ -1,0 +1,24 @@
+<div class="container", style="height:100vh;">
+    <div class="row">
+        <% if @like_boards.present? %>
+            <% @like_boards.each do |board| %>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= link_to board.title, board_path(board), class: 'navbar-brand mb-0 h1 text-info'  %></h5>
+                            <p class="card-text"><%= board.body[0, 20] %></p>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% else %>
+            <p><%= t('.no_result') %></p>
+        <% end %>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        <!-- ページネーション -->
+        <%= paginate @like_boards %>
+        </div>
+    </div>
+</div>
