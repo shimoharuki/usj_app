@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= choice.question.id %>
+  </td>
+  <td>
+    <%= choice.question.question_text %>
+  </td>
+  <td>
+    <%= l choice.question.created_at, format: :long %>
+  </td>
+  <td>
+    <%=render 'admin/questions/tag_list', tag_list: choice.question.tag_list%>
+  </td>
+  <td>
+    <%= link_to t('defaults.show'), admin_choice_path(choice), class: 'btn btn-info' %>
+    <%= link_to t('defaults.edit'), edit_admin_choice_path(choice), class: 'btn btn-success' %>
+    <%= link_to t('defaults.delete'), admin_question_path(choice.question), method: :delete, data: { confirm:'消しますか' }, class: 'btn btn-danger' %>
+  </td>
+</tr>
