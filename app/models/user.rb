@@ -12,8 +12,8 @@ class User < ApplicationRecord
   validates :reset_password_token, presence: true, uniqueness: true, allow_nil: true
   has_many :likes, dependent: :destroy
   has_many :like_boards, through: :likes, source: :board
-  has_one :answer
-  has_one :recommendation
+  has_many :answers, dependent: :destroy
+  has_one :recommendation, dependent: :destroy
   has_many :questions, dependent: :destroy
 
   def self.ransackable_attributes(_auth_object = nil)

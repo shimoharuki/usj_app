@@ -4,6 +4,7 @@ class CreateAnswers < ActiveRecord::Migration[7.0]
       t.string :selected_choice
       t.references :question, foreign_key: true
       t.references :user, foreign_key: true
+      t.references :choice, foreign_key: true
 
       t.timestamps
     end
