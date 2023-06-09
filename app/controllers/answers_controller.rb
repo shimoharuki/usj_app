@@ -8,6 +8,7 @@ class AnswersController < ApplicationController
   def create
     @answer = current_user.answers.build(answer_params)
     @question = Question.find(params[:question_id])
+    check_choices
     if @answer.save
       check_question_text
     else
@@ -38,5 +39,14 @@ class AnswersController < ApplicationController
     else
       redirect_back_or_to main_index_path
     end
+  end
+
+  def check_choices
+    @choices = @answer.choices
+    @choices = JSON.parse(@choices)
+    return unless @choices == ['', '', '', '', '', ''] 
+
+    @choice = Choice.find_by(id: params[:choice_id])
+    @answer.choices = ['ランダム']
   end
 end

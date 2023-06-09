@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   resources :answers, only: %i[create new]
 
   resources :password_resets, only: %i[new create edit update]
-  resources :recommendations, only: %i[create new]
+  resources :recommendations, only: %i[create index]
   namespace :admin do
     root to: 'dashboards#index'
     get 'login', to: 'user_sessions#new'
