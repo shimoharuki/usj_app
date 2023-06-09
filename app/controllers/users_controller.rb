@@ -6,7 +6,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path
+      session[:user_id] = @user.id
+      @question = Question.find_by(question_text: 'どのようにUSJを楽しみたいですか。')
+      @choice = Choice.find_by(question_id: @question.id)
+      redirect_to new_answer_path(question_id: @question.id, choice_id: @choice.id)
     else
       render :new
     end

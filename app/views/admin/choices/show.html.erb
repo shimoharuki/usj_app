@@ -24,9 +24,6 @@
           </td>
         </tr>
         <tr>
-            <th scope="row"><%= Question.human_attribute_name(:tag) %></th>
-            <td><%= @question.tag_list %></td>
-        </tr>
           <th scope="row"><%= Question.human_attribute_name(:created_at) %></th>
           <td><%= l @question.created_at, format: :long %></td>
         </tr>
