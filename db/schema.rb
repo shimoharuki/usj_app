@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_608_044_312) do
+ActiveRecord::Schema[7.0].define(version: 20_230_609_155_643) do
+  create_table 'ansewr_recommendations', force: :cascade do |t|
+    t.integer 'answer_id', null: false
+    t.integer 'recommendation_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['answer_id'], name: 'index_ansewr_recommendations_on_answer_id'
+    t.index ['recommendation_id'], name: 'index_ansewr_recommendations_on_recommendation_id'
+  end
+
   create_table 'answers', force: :cascade do |t|
-    t.string 'selected_choice'
     t.integer 'question_id'
     t.integer 'user_id'
     t.integer 'choice_id'
@@ -24,12 +32,23 @@ ActiveRecord::Schema[7.0].define(version: 20_230_608_044_312) do
     t.index ['user_id'], name: 'index_answers_on_user_id'
   end
 
+  create_table 'board_recommendations', force: :cascade do |t|
+    t.integer 'board_id', null: false
+    t.integer 'recommendation_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['board_id'], name: 'index_board_recommendations_on_board_id'
+    t.index ['recommendation_id'], name: 'index_board_recommendations_on_recommendation_id'
+  end
+
   create_table 'boards', force: :cascade do |t|
     t.integer 'user_id'
+    t.integer 'recommendation_id'
     t.string 'title'
     t.text 'body'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.index ['recommendation_id'], name: 'index_boards_on_recommendation_id'
     t.index ['user_id'], name: 'index_boards_on_user_id'
   end
 
@@ -60,13 +79,13 @@ ActiveRecord::Schema[7.0].define(version: 20_230_608_044_312) do
   end
 
   create_table 'recommendations', force: :cascade do |t|
-    t.integer 'question_id'
+    t.integer 'board_id'
     t.integer 'answer_id'
     t.integer 'user_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['answer_id'], name: 'index_recommendations_on_answer_id'
-    t.index ['question_id'], name: 'index_recommendations_on_question_id'
+    t.index ['board_id'], name: 'index_recommendations_on_board_id'
     t.index ['user_id'], name: 'index_recommendations_on_user_id'
   end
 
@@ -118,16 +137,21 @@ ActiveRecord::Schema[7.0].define(version: 20_230_608_044_312) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token'
   end
 
+  add_foreign_key 'ansewr_recommendations', 'answers'
+  add_foreign_key 'ansewr_recommendations', 'recommendations'
   add_foreign_key 'answers', 'choices'
   add_foreign_key 'answers', 'questions'
   add_foreign_key 'answers', 'users'
+  add_foreign_key 'board_recommendations', 'boards'
+  add_foreign_key 'board_recommendations', 'recommendations'
+  add_foreign_key 'boards', 'recommendations'
   add_foreign_key 'boards', 'users'
   add_foreign_key 'choices', 'questions'
   add_foreign_key 'likes', 'boards'
   add_foreign_key 'likes', 'users'
   add_foreign_key 'questions', 'users'
   add_foreign_key 'recommendations', 'answers'
-  add_foreign_key 'recommendations', 'questions'
+  add_foreign_key 'recommendations', 'boards'
   add_foreign_key 'recommendations', 'users'
   add_foreign_key 'taggings', 'tags'
 end

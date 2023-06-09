@@ -1,5 +1,6 @@
 class Recommendation < ApplicationRecord
-  belongs_to :answer
-  belongs_to :user
-  belongs_to :board
+  has_many :board_recommendations, dependent: :destroy
+  has_many :boards, through: :board_recommendations
+  has_many :ansewr_recommendations, dependent: :destroy
+  has_many :answers, through: :ansewr_recommendations
 end
