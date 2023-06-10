@@ -44,7 +44,7 @@ class AnswersController < ApplicationController
   def check_choices
     @choices = @answer.choices
     @choices = JSON.parse(@choices)
-    return unless @choices == ['', '', '', '', '', ''] 
+    return unless @choices == ['', '', '', '', '', '']
 
     @choice = Choice.find_by(id: params[:choice_id])
     @answer.choices = ['ランダム']

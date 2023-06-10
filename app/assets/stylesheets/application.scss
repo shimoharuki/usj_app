@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
- @import 'bootstrap';
- @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
- @import "font-awesome";
 body{
     font-family: 'Shippori Mincho', serif;
 }
@@ -31,5 +28,9 @@ body{
 footer {
     position: static;
   }
+
+@import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
+@import "font-awesome";
   
   
