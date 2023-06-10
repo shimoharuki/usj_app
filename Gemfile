@@ -59,7 +59,6 @@ gem 'ransack'
 gem 'redcarpet'
 gem 'rubocop', require: false
 gem 'sorcery', '0.16.3'
-gem 'pg'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -90,4 +89,8 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+end
+
+group :production do
+  gem 'pg'
 end
