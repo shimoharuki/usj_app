@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
+//= require admin-lte/plugins/bootstrap/js/bootstrap.bundle.min
 //= require activestorage
 //= require_tree .
 
