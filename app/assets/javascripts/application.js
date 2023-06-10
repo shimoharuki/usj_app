@@ -17,6 +17,8 @@
 //= require bootstrap
 //= require activestorage
 //= require_tree .
+//= require admin-lte/plugins/bootstrap/js/bootstrap.bundle.min
+//= require admin-lte/dist/js/adminlte.min
 
 window.copy = function(e) {
     // クリックしたボタンに紐づくコードの範囲の定義
