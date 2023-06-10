@@ -10,9 +10,7 @@ gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 gem 'sprockets-rails'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4', groups: %w[test development], require: false
 
-gem 'pg', groups: %w[production], require: false
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
@@ -61,6 +59,7 @@ gem 'ransack'
 gem 'redcarpet'
 gem 'rubocop', require: false
 gem 'sorcery', '0.16.3'
+gem 'pg'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -77,6 +76,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'letter_opener_web', '~> 2.0'
   gem 'web-console'
+  gem 'sqlite3', '~> 1.4'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
