@@ -12,9 +12,6 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require jquery_ujs
 //= require popper
 //= require bootstrap
 //= require activestorage
-//= require admin-lte/plugins/bootstrap/js/bootstrap.bundle.min
-//= require admin-lte/dist/js/adminlte.min
