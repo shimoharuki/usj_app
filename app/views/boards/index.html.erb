@@ -1,4 +1,10 @@
 <div class="container mt-5"">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- ページネーション -->
+            <%= paginate @boards %>
+        </div>
+    </div>
   <div class="row">
     <% @boards.each do |board| %>
       <div class="col-md-4">
@@ -11,10 +17,4 @@
       </div>
     <% end %>
   </div>
-  <div class="row">
-  <div class="col-md-12">
-    <!-- ページネーション -->
-    <%= paginate @boards %>
-  </div>
-</div>
 </div>

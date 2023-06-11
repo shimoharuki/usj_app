@@ -1,4 +1,10 @@
-<div class="container", style="height:100vh;">
+<div class="container my-5", style="height:100vh;">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- ページネーション -->
+            <%= paginate @like_boards %>
+        </div>
+    </div>
     <div class="row">
         <% if @like_boards.present? %>
             <% @like_boards.each do |board| %>
@@ -16,11 +22,5 @@
           <h2>お気に入りを見つけてみましょう。</h2>
 
         <% end %>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-        <!-- ページネーション -->
-        <%= paginate @like_boards %>
-        </div>
     </div>
 </div>
