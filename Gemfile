@@ -59,7 +59,6 @@ gem 'ransack'
 gem 'redcarpet'
 gem 'rubocop', require: false
 gem 'sorcery', '0.16.3'
-gem 'webpacker'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
