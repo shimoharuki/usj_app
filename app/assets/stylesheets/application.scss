@@ -10,10 +10,16 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require_tree .
  *= require_self
- */
+ 
+*/
+  @import 'bootstrap';
+  @import "font-awesome";
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Shippori+Mincho:wght@400;700&display=swap');
+
 body{
-    font-family: 'Shippori Mincho', serif;
+  font-family: 'Shippori Mincho', serif;
 }
 
 .container img {
@@ -27,8 +33,5 @@ body{
 footer {
     position: static;
   }
-
-@import 'bootstrap';
-@import "font-awesome";
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
+  
   
