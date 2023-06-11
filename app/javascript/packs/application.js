@@ -19,4 +19,5 @@ console.log('Hello World from Webpacker')
 
 import 'admin-lte/plugins/bootstrap/js/bootstrap.bundle.min';
 import '../stylesheets/application.scss'
+import 'require admin-lte/dist/js/adminlte.mins';
 import '../stylesheets/admin.scss'
