@@ -40,7 +40,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-gem 'bootstrap', '~> 4.3.1'
 
 gem 'acts-as-taggable-on', '~> 9.0'
 gem 'bootstrap4-kaminari-views'
@@ -74,8 +73,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'letter_opener_web', '~> 2.0'
-  gem 'web-console'
   gem 'sqlite3', '~> 1.4'
+  gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
