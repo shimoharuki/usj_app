@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_055950) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "choices"
-    t.integer "choice_id", null: false
+    t.integer "choice_id"
     t.index ["choice_id"], name: "index_answers_on_choice_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_055950) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "recommendation_id", null: false
+    t.integer "recommendation_id"
     t.index ["recommendation_id"], name: "index_boards_on_recommendation_id"
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
