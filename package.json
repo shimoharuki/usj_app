@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "@rails/webpacker": "5.4.4",
-    "admin-lte": "^3.0"
+    "@rails/webpacker": "5.4.4"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-methods": "^7.18.6",
