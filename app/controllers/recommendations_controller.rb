@@ -1,5 +1,8 @@
 class RecommendationsController < ApplicationController
   def create
+    if Recommendation.exists?(user_id: current_user.id)
+      redirect_to recommendations_path
+    else
       @answers = []
       @boards = []
       firsr_recommend
