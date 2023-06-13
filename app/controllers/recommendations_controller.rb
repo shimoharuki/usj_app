@@ -20,6 +20,7 @@ class RecommendationsController < ApplicationController
       end
       @recommendation.save
       redirect_to recommendations_path
+    end
   end
 
   def index
