@@ -5,11 +5,11 @@
         <div class="card-body">
           <div class='row'>
             <div class='col-md-9'>
-            <%= render 'like_button', board: @board %>
               <h3 style='display: inline;'><%=@board.title%></h3>
             </div>
           </div>
           <%= markdown(@board.body) %>
+          <%= render 'like_button', board: @board %>
         </div>
       </article>
     </div>
