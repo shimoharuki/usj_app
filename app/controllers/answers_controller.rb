@@ -47,6 +47,6 @@ class AnswersController < ApplicationController
     return unless @choices == ['', '', '', '', '', '']
 
     @choice = Choice.find_by(id: params[:choice_id])
-    @answer.choices = ['ランダム']
+    @answer.choices = ['準備']
   end
 end
