@@ -11,7 +11,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">
-              <%= link_to board.title, board_path(board), class: 'navbar-brand mb-0 h1 text-info px-3' %>
+              <%= link_to board.title, board_path(board), class: 'navbar-brand mb-0 h1 text-info text-truncate' %>
             </h5>
             <div class="card-text">
               <%= board.body[0,7] %>
