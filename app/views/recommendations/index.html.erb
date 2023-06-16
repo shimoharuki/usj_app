@@ -4,7 +4,7 @@
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title"><%= link_to board.title, board_path(board), class: 'navbar-brand mb-0 text-info'  %></h5>
+            <h5 class="card-title text-truncates"><%= link_to board.title, board_path(board), class: 'navbar-brand mb-0 text-info'  %></h5>
             <p class="card-text"><%= board.body[0,14]%></p>
           </div>
         </div>
