@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
       @boards += Board.joins(:tags).where('tags.name = ?', 'food') if choices.include?('パークの美味しい食事が食べたい')
 
-      @boards += Board.joins(:tags).where('tags.name = ?', 'event') if choices.include?('期間限定イベントを楽しみたい)
+      @boards += Board.joins(:tags).where('tags.name = ?', 'event') if choices.include?('期間限定イベントを楽しみたい')
 
       @boards += Board.joins(:tags).where('tags.name = ?', 'preparation') if choices.include?('準備')
 
