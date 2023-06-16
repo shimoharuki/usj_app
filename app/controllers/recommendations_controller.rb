@@ -18,7 +18,6 @@ class RecommendationsController < ApplicationController
       @answers.each do |answer|
         @recommendation.answers << answer
       end
-      @recommendation.boards = @recommendation.boards.uniq { |board| board.id }
       @recommendation.save
       redirect_to recommendations_path
     end
