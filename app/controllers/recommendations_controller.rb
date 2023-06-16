@@ -10,7 +10,7 @@ class RecommendationsController < ApplicationController
       third_recommend
       @recommendation = Recommendation.new
       @recommendation.user_id = current_user.id
-
+      @boards = @boards.uniq { |board| board.id }
       @boards.each do |board|
         @recommendation.boards << board
       end

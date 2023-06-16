@@ -1,7 +1,7 @@
 class BoardsController < ApplicationController
   def index
     @boards = Board.all
-    @boards = @boards.tagged_with(params[:tag_name]) if params[:tag_name].present?
+    @boards = @boards.includes(:tags).tagged_with(params[:tag_name]) if params[:tag_name].present?
     @boards = @boards.page(params[:page]).per(21)
   end
 
