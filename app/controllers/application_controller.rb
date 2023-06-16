@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def firsr_recommend
     @answers = Answer.where(user_id: current_user.id)
     @answers_with_choices = @answers.select do |answer|
-      answer.choices.include?('とにかくアトラクションに乗りたい') || answer.choices.include?('パークの美味しい食事が食べたい') || answer.choices.include?('たくさんの写真を撮りたい') || answer.choices.include?('準備')
+      answer.choices.include?('とにかくアトラクションに乗りたい') || answer.choices.include?('パークの美味しい食事が食べたい') || answer.choices.include?('期間限定イベントを楽しみたい') || answer.choices.include?('準備')
     end
 
     @answers_with_choices.each do |answer|
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
       @boards += Board.joins(:tags).where('tags.name = ?', 'food') if choices.include?('パークの美味しい食事が食べたい')
 
-      @boards += Board.joins(:tags).where('tags.name = ?', 'picture') if choices.include?('たくさんの写真を撮りたい')
+      @boards += Board.joins(:tags).where('tags.name = ?', 'event') if choices.include?('期間限定イベントを楽しみたい)
 
       @boards += Board.joins(:tags).where('tags.name = ?', 'preparation') if choices.include?('準備')
 
