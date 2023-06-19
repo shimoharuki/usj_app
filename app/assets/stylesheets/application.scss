@@ -19,6 +19,29 @@
 
 body{
   font-family: 'Shippori Mincho', serif;
+  background-image: image-url("usj.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image: image-url("usj.jpeg");
+  }
+}
+
+/* タブレット画面の場合 */
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    background-image: image-url("usj.jpeg");
+  }
+}
+
+/* デスクトップ画面の場合 */
+@media (min-width: 992px) {
+  body {
+    background-image: image-url("usj.jpeg");
+  }
 }
 
 
