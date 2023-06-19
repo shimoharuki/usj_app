@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
   get '/terms', to: 'main#terms_of_service'
+  get '/recommend_question/first_recommend', to: 'recommend_question#first_recommend'
 
   resources :users, only: %i[new create]
   resources :main, only: %i[index]

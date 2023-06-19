@@ -4,12 +4,12 @@ class RecommendationsController < ApplicationController
       redirect_to recommendations_path
     else
       @answers = []
-      @boards = []
-      firsr_recommend
-      second_recommend
-      third_recommend
       @recommendation = Recommendation.new
       @recommendation.user_id = current_user.id
+      @answers = Answer.where(user_id: current_user.id)
+      @recommendation.first_recommend(@answers)
+      @recommendation.second_recommend(@answers)
+      @recommendation.third_recommend(@answers)
       @boards = @boards.uniq { |board| board.id }
       @boards.each do |board|
         @recommendation.boards << board
