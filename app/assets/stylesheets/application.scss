@@ -21,6 +21,8 @@ body{
   font-family: 'Shippori Mincho', serif;
   background-image: image-url("usj.jpeg");
   background-size: cover;
+  height: calc(100vh - 134px);
+  position: relative;
   background-position: center;
 }
 
