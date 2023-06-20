@@ -1,8 +1,8 @@
 class Recommendation < ApplicationRecord
   has_many :board_recommendations, dependent: :destroy
   has_many :boards, through: :board_recommendations
-  has_many :ansewr_recommendations, dependent: :destroy
-  has_many :answers, through: :ansewr_recommendations
+  has_many :answer_recommendations, dependent: :destroy
+  has_many :answers, through: :answer_recommendations
 
   def first_recommend(answers)
     @answers = answers

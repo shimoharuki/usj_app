@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AnsewrRecommendationTest < ActiveSupport::TestCase
+class AnswerRecommendationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
