@@ -1,9 +1,9 @@
-<div class="container pt-3">
+<div class="container pt-3 text-white">
   <div class="row">
     <div class="col-md-10 offset-md-1">
       <h1 class="float-left mb-5">ユーザー情報</h1>
       <%= link_to '編集', edit_profile_path, class: 'btn btn-info float-right' %>
-      <table class="table">
+      <table class="table text-white">
         <tr>
           <th scope="row"><%= User.human_attribute_name(:email) %></th>
           <td><%= current_user.email %></td>

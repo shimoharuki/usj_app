@@ -23,14 +23,21 @@ class RecommendationsController < ApplicationController
   end
 
   def index
-    create
     @recommendations = Recommendation.where(user_id: current_user.id)
-    @boards = []
-    @recommendations.each do |recommendation|
-      recommendation.boards.each do |board|
-        @boards << board
+      check_recommend
+    @recommendation_boards = current_user.recommendation.boards.page(params[:page]).per(21)
+  end
+
+  def check_recommend
+    if @recommendations  == []
+      create
+      @recommendations = Recommendation.where(user_id: current_user.id)
+      @boards = []
+      @recommendations.each do |recommendation|
+        recommendation.boards.each do |board|
+          @boards << board
+        end
       end
     end
-    @recommendation_boards = current_user.recommendation.boards.page(params[:page]).per(21)
   end
 end

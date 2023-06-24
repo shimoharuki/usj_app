@@ -25,11 +25,7 @@
         <%= yield %>
       </div>
     <footer id='footer' class='footer-bottom fixed-bottom'>
-    <% if logged_in? %>
       <%= render 'shared/footer' %>
-    <% else %>
-      <%= render 'shared/before_login_footer' %>
-    <%end%>
     </footer>
     <!-- jQueryの読み込み -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
