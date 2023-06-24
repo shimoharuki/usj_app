@@ -19,11 +19,11 @@ class RecommendationsController < ApplicationController
         @recommendation.answers << answer
       end
       @recommendation.save
-      redirect_to recommendations_path
     end
   end
 
   def index
+    create
     @recommendations = Recommendation.where(user_id: current_user.id)
     @boards = []
     @recommendations.each do |recommendation|

@@ -37,7 +37,7 @@ class AnswersController < ApplicationController
       @choice = Choice.find_by(question_id: @question.id)
       redirect_to new_answer_path(question_id: @question.id, choice_id: @choice.id)
     else
-      redirect_back_or_to main_index_path, info: '作成しました。左上のおすすめからご覧ください。'
+      redirect_to recommendations_path, info: '作成しました。左上のおすすめからご覧ください。'
     end
   end
 

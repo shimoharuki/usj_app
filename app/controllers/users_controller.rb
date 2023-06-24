@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       @choice = Choice.find_by(question_id: @question.id)
       redirect_to new_answer_path(question_id: @question.id, choice_id: @choice.id)
     else
+      flash.now[:danger] = '失敗しました'
       render :new
     end
   end
