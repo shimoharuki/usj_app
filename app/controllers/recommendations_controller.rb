@@ -25,7 +25,7 @@ class RecommendationsController < ApplicationController
   def index
     @recommendations = Recommendation.where(user_id: current_user.id)
       check_recommend
-    @recommendation_boards = current_user.recommendation.boards.page(params[:page]).per(21)
+    @recommendation_boards = current_user.recommendation.boards.page(params[:page]).per(15)
   end
 
   def check_recommend

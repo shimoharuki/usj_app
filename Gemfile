@@ -58,6 +58,7 @@ gem 'redcarpet'
 gem 'rubocop', require: false
 gem 'sorcery', '0.16.3'
 gem 'rails-ujs'
+gem 'rails-autocomplete'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

@@ -1,8 +1,13 @@
 class BoardsController < ApplicationController
   def index
-    @boards = Board.all
-    @boards = @boards.includes(:tags).tagged_with(params[:tag_name]) if params[:tag_name].present?
-    @boards = @boards.page(params[:page]).per(21)
+    @search = Board.ransack(params[:q])
+    @boards = @search.result(distinct: true).includes(:tags).tagged_with(params[:tag_name]) if params[:tag_name].present?
+    @boards = @boards.page(params[:page]).per(15)
+
+    respond_to do |format|
+      format.html 
+      format.json { render json: @boards }
+    end
   end
 
   def show
@@ -10,6 +15,6 @@ class BoardsController < ApplicationController
   end
 
   def likes
-    @like_boards = current_user.like_boards.page(params[:page]).per(21)
+    @like_boards = current_user.like_boards.page(params[:page]).per(15)
   end
 end

@@ -28,6 +28,9 @@ body{
   background-attachment: fixed;
 }
 
+a {
+  color: rgb(239, 203, 203);
+}
 @media (max-width: 767px) {
   body {
     background-image: image-url("usj.jpeg");
