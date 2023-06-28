@@ -4,7 +4,7 @@ class Admin::BoardsController < Admin::BaseController
     @search = Board.ransack(params[:q])
     @boards = @search.result(distinct: true).includes(:user).order(created_at: :desc)
     @boards = Board.tagged_with("#{params[:tag_name]}") if params[:tag_name]
-    @boards = @boards.page(params[:page]).per(10)
+    @boards = @boards.page(params[:page]).per(15)
   end
 
   def new
