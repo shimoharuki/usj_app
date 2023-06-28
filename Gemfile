@@ -59,6 +59,9 @@ gem 'rubocop', require: false
 gem 'sorcery', '0.16.3'
 gem 'rails-ujs'
 gem 'rails-autocomplete'
+gem 'nifty-generators'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
