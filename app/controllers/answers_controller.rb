@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def new
     @question = Question.find(params[:question_id])
     @choice = Choice.find(params[:choice_id])
@@ -31,7 +32,21 @@ class AnswersController < ApplicationController
     if @question_text == 'どのようにUSJを楽しみたいですか。'
       @question = Question.find_by(question_text: '誰とUSJに遊びに行きますか。')
       @choice = Choice.find_by(question_id: @question.id)
-      redirect_to new_answer_path(question_id: @question.id, choice_id: @choice.id)
+      response_data = {
+        status: 'success',
+        message: 'Data saved successfully',
+        question: {
+          id: @question.id,
+          text: @question.question_text
+        },
+        choice: {
+          id: @choice.id,
+          name: @choice.choice_name
+        }
+      }
+    
+      # レスポンスを返す
+      render json: response_data 
     elsif @question_text == '誰とUSJに遊びに行きますか。'
       @question = Question.find_by(question_text: 'お目当てのエリアはありますか。')
       @choice = Choice.find_by(question_id: @question.id)
