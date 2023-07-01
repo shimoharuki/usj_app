@@ -62,6 +62,7 @@ gem 'rails-autocomplete'
 gem 'nifty-generators'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem "meta-tags"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
