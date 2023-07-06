@@ -22,6 +22,7 @@
       <% else %>
         <%= render 'shared/before_login_header' %>
       <%end%>
+      <%= render 'boards/search', q: @q, url: boards_path %>
       <ul id = 'conversion' class='text-white ms-5'></ul>
       <div class="container content">
         <%= yield %>

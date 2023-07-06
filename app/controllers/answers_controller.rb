@@ -41,8 +41,9 @@ class AnswersController < ApplicationController
         },
         choice: {
           id: @choice.id,
-          name: @choice.choice_name
-        }
+          name: @choice.choice_name 
+        },
+        url: new_answer_path(question_id: @question.id, choice_id: @choice.id)
       }
     
       # レスポンスを返す

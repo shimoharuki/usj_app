@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  autocomplete :board, :title, :limit =>2, :full => true
   def index
   end
 

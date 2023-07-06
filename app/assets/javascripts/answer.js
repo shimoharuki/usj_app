@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
    answer_btn.addEventListener('click',async () => {
     const choices = Array.from(document.querySelectorAll('.form-check-input:checked')).map(element => element.value);
     try {
-        const response = await fetch('/answers', {
+        const response = await fetch('/answers?choice_id=1&question_id=1', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('通ってる？')
         // レスポンスの処理
         const data = await response.json();
-        console.log(data.question.id);
+        console.log(data);
         
         // 必要な後続の処理を記述する
       } catch (error) {
