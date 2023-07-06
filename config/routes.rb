@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :main, only: %i[index]
   resources :boards do
-    get :autocomplete_board_title, :on => :collection
+    get :autocomplete_board_title, on: :collection
     collection do
       get 'likes'
     end

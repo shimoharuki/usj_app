@@ -65,5 +65,4 @@ class Recommendation < ApplicationRecord
   def process_choice(choices, choice, tag_name)
     @boards += Board.joins(:tags).where('tags.name = ?', tag_name) if choices.include?(choice)
   end
-
 end

@@ -1,23 +1,9 @@
-<%= javascript_include_tag 'answer' %>
 <div class="container py-5 my-5">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h3 class="text-center mb-3 text-white">あなたの希望のUSJライフを教えてください。<br>あなたにお勧めしたい記事は<br>上部「おすすめ」で確認できます。</h3>
-      <h2 class="text-center mt-5 text-white"><%= @question.question_text %></h2>
-        <%= form_with(model: @answer, url: answers_path) do |form| %>
-            <%= hidden_field_tag :question_id, @question.id %>
-            <%= hidden_field_tag :choice_id, @choice.id %>
-            <% @choice.choice_name.split(',').each do |choice| %>
-                <div class="form-check text-center">
-                    <%= hidden_field_tag 'answer[choices][]', '', id: "hidden_choice_#{choice.parameterize}" %>
-                    <%= check_box_tag 'answer[choices][]', choice, false, id: "choice_#{choice.parameterize}", class: 'form-check-input' %>
-                    <label class="form-check-label text-white" for="choice_<%= choice.parameterize %>"><%= choice %></label>
-                </div>
-            <% end %>
-            <div class="d-flex justify-content-center mt-3">
-                <%= form.submit 'Create Answer', class: 'btn btn-info ', id: 'answer_btn'%>
-            </div>
-        <% end %>
+      <%= render 'answers/answer' %>
     </div>
   </div>
 </div>
+

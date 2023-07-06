@@ -7,9 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      @question = Question.find_by(question_text: 'どのようにUSJを楽しみたいですか。')
-      @choice = Choice.find_by(question_id: @question.id)
-      redirect_to new_answer_path(question_id: @question.id, choice_id: @choice.id)
+      # user.idだけもった状態でanswer/newに渡す
+      redirect_to new_answer_path
     else
       flash.now[:danger] = '失敗しました'
       render :new

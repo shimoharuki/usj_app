@@ -50,19 +50,19 @@ gem 'enum_help'
 gem 'faker'
 gem 'font-awesome-rails'
 gem 'font-awesome-sass', '~>5.15.1'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'kaminari'
+gem 'meta-tags'
+gem 'nifty-generators'
 gem 'pry-byebug'
+gem 'rails-autocomplete'
 gem 'rails-i18n'
+gem 'rails-ujs'
 gem 'ransack'
 gem 'redcarpet'
 gem 'rubocop', require: false
 gem 'sorcery', '0.16.3'
-gem 'rails-ujs'
-gem 'rails-autocomplete'
-gem 'nifty-generators'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem "meta-tags"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -92,9 +92,9 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'factory_bot_rails'
 end
 
 group :production do
